@@ -20,11 +20,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_212904) do
 
   create_table "players", force: :cascade do |t|
     t.string "name"
-    t.integer "game_id_id", null: false
+    t.integer "game_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id_id"], name: "index_players_on_game_id_id"
+    t.index ["game_id"], name: "index_players_on_game_id"
   end
 
-  add_foreign_key "players", "game_ids"
+  add_foreign_key "players", "games"
 end
